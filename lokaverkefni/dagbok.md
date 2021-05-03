@@ -1,0 +1,1 @@
+* 3.5.2021 - Byrja á verkefninu, Gerði alla íhluta klasana og byrjaði á að setja þá upp
