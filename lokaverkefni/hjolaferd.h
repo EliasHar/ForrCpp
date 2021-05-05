@@ -4,7 +4,7 @@
 #include <iostream>
 #include "ferd.h"
 
-class Hjolaferd{
+class Hjolaferd : public Ferd {
     private:
         int timi;
     public:

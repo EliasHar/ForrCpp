@@ -29,9 +29,4 @@ int Ferd::getFjoldi(){
 void Ferd::setFjoldi(int fjoldi){
     this->fjoldi = fjoldi;
 }
-void Ferd::prenta(){
 
-}
-Ferd::~Ferd(){
-
-}

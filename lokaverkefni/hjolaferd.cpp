@@ -15,5 +15,6 @@ void Hjolaferd::setTimi(int timi){
     this->timi = timi;
 }
 void Hjolaferd::prenta(){
-
+    std::cout << "Númer: " << this->getNr() << ", Fjöldi Bókaðir: " << this->getBokadir() 
+    << ", Heildarfjöldi: " << this->getFjoldi() << ", Tími: " << this->timi << std::endl;
 }

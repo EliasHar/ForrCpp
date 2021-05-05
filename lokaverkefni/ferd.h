@@ -1,6 +1,6 @@
 #pragma once
 
-
+#include <iostream>
 
 class Ferd{
     private:
@@ -16,6 +16,6 @@ class Ferd{
         void setBokadir(int bokadir);
         int getFjoldi();
         void setFjoldi(int fjoldi);
-        void prenta();
-        ~Ferd();
+        virtual void prenta() = 0;
+        virtual ~Ferd() {}
 };

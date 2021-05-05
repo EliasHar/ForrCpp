@@ -4,7 +4,7 @@
 #include <iostream>
 #include "ferd.h"
 
-class Batsferd{
+class Batsferd : public Ferd {
     private:
         int nr;
         int bokadir;
