@@ -30,10 +30,28 @@ void Ferd::setFjoldi(int fjoldi){
     this->fjoldi = fjoldi;
 }
 bool Ferd::boka(int bokun) {
-
+    if(bokun >= 0) {
+        if(bokun + this->bokadir <= this->fjoldi) {
+            this->bokadir += bokun;
+            return true;
+        }
+        std::cout << "Þú getur ekki bókað fleiri en komast í ferðina!" << std::endl;
+        return false;
+    }
+    std::cout << "Þú getur ekki afbókað minni en 0 í ferðina!" << std::endl;
+    return false;
 }
-bool Ferd::afboka(int bokun) {
-    
+bool Ferd::afboka(int afbokun) {
+    if(afbokun >= 0) {
+        if(afbokun <= this->bokadir) {
+            this->bokadir -= afbokun;
+            return true;
+        }
+        std::cout << "Þú getur ekki afbókað fleiri en eru bókaðir" << std::endl;
+        return false;
+    }
+    std::cout << "Þú getur ekki afbókað færra en 0" << std::endl;
+    return false;
 }
 bool Ferd::operator==(Ferd& other){
     return this->nr == other.getNr() &&
@@ -44,9 +62,6 @@ bool Ferd::operator!=(Ferd& other){
     return !(*this == other);
 }
 bool Ferd::operator<(Ferd& other){
-    if(this->nr == other.getNr()) {
-        return this->bokadir < other.getBokadir();
-    }
     return this->nr < other.getNr();
 }
 bool Ferd::operator>(Ferd& other) {
@@ -59,5 +74,5 @@ bool Ferd::operator>=(Ferd& other){
     return !(*this < other);
 }
 std::ostream& operator<<(std::ostream& ostr, Ferd& b) {
-    return ostr << 'Id: ' << b.getNr() << ", Fjöldi: " << b.getFjoldi() << ", Litur: " << b.getBokadir();
+    return ostr << "Id: " << b.getNr() << ", Fjöldi: " << b.getFjoldi() << ", Litur: " << b.getBokadir();
 }

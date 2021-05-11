@@ -17,7 +17,7 @@ class Ferd{
         int getFjoldi();
         void setFjoldi(int fjoldi);
         bool boka(int bokun);
-        bool afboka(int bokun);
+        bool afboka(int afbokun);
         virtual void prenta() = 0;
         virtual ~Ferd() {}
         bool operator==(Ferd& other);

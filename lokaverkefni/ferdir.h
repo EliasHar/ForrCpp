@@ -18,7 +18,8 @@ class Ferdir {
         void skraHjol(int nr, int bokadir, int fjoldi, int timi);
         void afskraFerd(int nr);
         Ferd* finnaFerd(int nr);
-        bool breytaBokadir(int id, int bokanir);
+        bool boka(int nr, int bokun);
+        bool afboka(int nr, int afbokun); 
         void prenta();
         ~Ferdir();
 };

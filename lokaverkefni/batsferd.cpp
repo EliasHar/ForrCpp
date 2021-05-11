@@ -5,7 +5,7 @@
 Batsferd::Batsferd(){
     this->yfirbyggdur = false;
 }
-Batsferd::Batsferd(int nr, int bokadir, int fjoldi, bool yfirbyggdur){
+Batsferd::Batsferd(int nr, int bokadir, int fjoldi, bool yfirbyggdur) : Ferd(nr, bokadir, fjoldi){
     this->yfirbyggdur = yfirbyggdur;
 }
 bool Batsferd::getYfirbyggdur(){

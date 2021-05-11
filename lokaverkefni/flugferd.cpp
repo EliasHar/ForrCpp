@@ -5,7 +5,7 @@
 Flugferd::Flugferd(){
     this->stadur = "";
 }
-Flugferd::Flugferd(int nr, int bokadir, int fjoldi, std::string stadur){
+Flugferd::Flugferd(int nr, int bokadir, int fjoldi, std::string stadur) : Ferd(nr, bokadir, fjoldi){
     this->stadur = stadur;
 }
 std::string Flugferd::getStadur(){

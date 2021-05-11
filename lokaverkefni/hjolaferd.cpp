@@ -5,7 +5,7 @@
 Hjolaferd::Hjolaferd(){
     this->timi = 0;
 }
-Hjolaferd::Hjolaferd(int nr, int bokadir, int fjoldi, int timi){
+Hjolaferd::Hjolaferd(int nr, int bokadir, int fjoldi, int timi) : Ferd(nr, bokadir, fjoldi){
     this->timi = timi;
 }
 int Hjolaferd::getTimi(){

@@ -16,9 +16,16 @@ void Ferdir::skraFerd(Ferd* b){
         } else {
             FerdaNoda* current = this->head;
             FerdaNoda* prev = this->head;
+            std::cout << "-----------------------------------------------------" << std::endl;
             while(current && current->ferdin <= newNode->ferdin) {
                 prev = current;
+                std::cout << "prev ";
+                prev->ferdin->prenta();
                 current = current->next;
+                std::cout << "current ";
+                if(current) current->ferdin->prenta();
+                std::cout << "newnode ";
+                newNode->ferdin->prenta();
             }
             newNode->next = current;
             prev->next = newNode;
@@ -37,7 +44,6 @@ void Ferdir::skraHjol(int nr, int bokadir, int fjoldi, int timi){
 void Ferdir::afskraFerd(int nr){
     if(this->head){
         if(this->head->ferdin->getNr() == nr) {
-            Ferd* skila = this->head->ferdin;
             FerdaNoda* newHead = this->head->next;
             delete this->head;
             this->head = newHead;
@@ -67,16 +73,33 @@ Ferd* Ferdir::finnaFerd(int nr){
     }
     return nullptr;
 }
-bool Ferdir::breytaBokadir(int id, int bokanir){
-    
+bool Ferdir::boka(int nr, int bokun) {
+    Ferd* ferdin = this->finnaFerd(nr);
+    if (ferdin) {
+        return ferdin->boka(bokun);
+    }
+    return false;
+}
+bool Ferdir::afboka(int nr, int afbokun) {
+    Ferd* ferdin = this->finnaFerd(nr);
+    if (ferdin) {
+        return ferdin->afboka(afbokun);
+    }
+    return false;
 }
 void Ferdir::prenta(){
     FerdaNoda* current = this->head;
     while(current) {
-        std::cout << current->ferdin << std::endl;
+        //std::cout << current->ferdin << std::endl;//
+        current->ferdin->prenta();
         current = current->next;
     }
 }
 Ferdir::~Ferdir(){
-
+    FerdaNoda* newHead = nullptr;
+    while(this->head) {
+        newHead = this->head->next;
+        delete this->head;
+        this->head = newHead;
+    }
 }
