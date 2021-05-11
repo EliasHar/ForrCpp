@@ -16,9 +16,9 @@ class Ferdir {
         void skraBat(int nr, int bokadir, int fjoldi, bool yfirbyggdur);
         void skraFlug(int nr, int bokadir, int fjoldi, std::string stadur);
         void skraHjol(int nr, int bokadir, int fjoldi, int timi);
-        void afskraFerd();
-        void finnaFerd(int nr);
-        void breytaBokadir();
+        void afskraFerd(int nr);
+        Ferd* finnaFerd(int nr);
+        bool breytaBokadir(int id, int bokanir);
         void prenta();
         ~Ferdir();
 };

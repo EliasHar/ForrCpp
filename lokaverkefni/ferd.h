@@ -16,6 +16,15 @@ class Ferd{
         void setBokadir(int bokadir);
         int getFjoldi();
         void setFjoldi(int fjoldi);
+        bool boka(int bokun);
+        bool afboka(int bokun);
         virtual void prenta() = 0;
         virtual ~Ferd() {}
+        bool operator==(Ferd& other);
+        bool operator!=(Ferd& other);
+        bool operator<(Ferd& other);
+        bool operator>(Ferd& other);
+        bool operator<=(Ferd& other);
+        bool operator>=(Ferd& other);
 };
+std::ostream& operator<<(std::ostream& ostr, Ferd& b);

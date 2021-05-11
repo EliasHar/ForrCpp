@@ -3,7 +3,6 @@
 #include <sstream>
 
 int main() {
-
     Flugferd(900, 10, 50, "Akureyri");
     Flugferd(901, 120, 200, "Tenerife");
     Flugferd(902, 3, 10, "Grímsey");

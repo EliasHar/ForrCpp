@@ -29,4 +29,35 @@ int Ferd::getFjoldi(){
 void Ferd::setFjoldi(int fjoldi){
     this->fjoldi = fjoldi;
 }
+bool Ferd::boka(int bokun) {
 
+}
+bool Ferd::afboka(int bokun) {
+    
+}
+bool Ferd::operator==(Ferd& other){
+    return this->nr == other.getNr() &&
+    this->fjoldi == other.getFjoldi() &&
+    this->bokadir == other.getBokadir();
+}
+bool Ferd::operator!=(Ferd& other){
+    return !(*this == other);
+}
+bool Ferd::operator<(Ferd& other){
+    if(this->nr == other.getNr()) {
+        return this->bokadir < other.getBokadir();
+    }
+    return this->nr < other.getNr();
+}
+bool Ferd::operator>(Ferd& other) {
+    return other < *this;
+}
+bool Ferd::operator<=(Ferd& other){
+    return !(*this > other);
+}
+bool Ferd::operator>=(Ferd& other){
+    return !(*this < other);
+}
+std::ostream& operator<<(std::ostream& ostr, Ferd& b) {
+    return ostr << 'Id: ' << b.getNr() << ", Fjöldi: " << b.getFjoldi() << ", Litur: " << b.getBokadir();
+}
