@@ -62,14 +62,12 @@ bool Ferd::operator!=(Ferd& other){
     return !(*this == other);
 }
 bool Ferd::operator<(Ferd& other){
-    std::cout << " test " << std::endl;
     return this->nr < other.getNr();
 }
 bool Ferd::operator>(Ferd& other) {
     return other < *this;
 }
 bool Ferd::operator<=(Ferd& other){
-    std::cout << "Test 2" << std::endl;
     return !(*this > other);
 }
 bool Ferd::operator>=(Ferd& other){

@@ -10,22 +10,16 @@ void Ferdir::skraFerd(Ferd* b){
     if(!this->head){
         this->head = newNode;
     } else {
-        if(this->head->ferdin > newNode->ferdin) {
+        if(*this->head->ferdin > *newNode->ferdin) {
             newNode->next = this->head;
             this->head = newNode;
         } else {
             FerdaNoda* current = this->head;
             FerdaNoda* prev = this->head;
             std::cout << "-----------------------------------------------------" << std::endl;
-            while(current && current->ferdin <= newNode->ferdin) {
+            while(current && *current->ferdin <= *newNode->ferdin) {
                 prev = current;
-                std::cout << "prev ";
-                prev->ferdin->prenta();
                 current = current->next;
-                std::cout << "current ";
-                if(current) current->ferdin->prenta();
-                std::cout << "newnode ";
-                newNode->ferdin->prenta();
             }
             newNode->next = current;
             prev->next = newNode;
