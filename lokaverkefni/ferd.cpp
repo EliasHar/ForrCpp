@@ -21,7 +21,9 @@ int Ferd::getBokadir(){
     return this->bokadir;
 }
 void Ferd::setBokadir(int bokadir){
-    this->bokadir = bokadir;
+    if (bokadir >! this->fjoldi) {
+        this->bokadir = bokadir;
+    }
 }
 int Ferd::getFjoldi(){
     return this->fjoldi;
@@ -38,7 +40,7 @@ bool Ferd::boka(int bokun) {
         std::cout << "Þú getur ekki bókað fleiri en komast í ferðina!" << std::endl;
         return false;
     }
-    std::cout << "Þú getur ekki afbókað minni en 0 í ferðina!" << std::endl;
+    std::cout << "Þú getur ekki bókað færri en 0 í ferðina!" << std::endl;
     return false;
 }
 bool Ferd::afboka(int afbokun) {

@@ -16,7 +16,6 @@ void Ferdir::skraFerd(Ferd* b){
         } else {
             FerdaNoda* current = this->head;
             FerdaNoda* prev = this->head;
-            std::cout << "-----------------------------------------------------" << std::endl;
             while(current && *current->ferdin <= *newNode->ferdin) {
                 prev = current;
                 current = current->next;
